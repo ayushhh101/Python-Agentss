@@ -62,7 +62,7 @@ def goal_agent_cb(userId: str, query: str, response: str, lang: str):
     detection_json = extract_json(detection_text)
 
     if not detection_json.get("is_goal"):
-        print("Goal Agent: No goal found")
+        print("Goal Agent: No goal found")  
         return None
 
     # Convert paise → rupees for new schema

@@ -46,16 +46,15 @@ class FinWellAgent:
                     # ------------------ AGENT : DATA ANALYSIS ------------------
                     if agent_name == "create_data_analysis_agent":
                         print("\n--- Step 1: Data Analysis ---")
+
+                        # create async analysis agent
+                        analysis_agent =  create_data_analysis_agent(self.userId)
+
+                        # get analysis response
                         
-                        # 1) Get the analysis agent (we need USER ID here)
-                        analysis_agent = create_data_analysis_agent(self.userId)
 
-                        # 2) Ask the agent to summarize the analytics
-                        analysis_response = analysis_agent("Summarize my financial analytics.")
-
-                        # 3) Store response
-                        self.context["data_analysis"] = analysis_response
-                        self.results["data_analysis"] = analysis_response
+                        self.context["data_analysis"] = analysis_agent
+                        self.results["data_analysis"] = analysis_agent
 
                         print("✓ Data Analysis Complete")
 
