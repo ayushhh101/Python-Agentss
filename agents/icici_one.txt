@@ -1,0 +1,79 @@
+1. Fixed Deposit (ICICI Bank)
+
+Tenure: 1 year to < 15 months
+
+Interest Rate: 6.25% to 6.75% per annum
+
+Notes: General public FD rates as per ICICI FD schedule
+
+2. Fixed Deposit (ICICI Bank)
+
+Tenure: 2 years 1 day to 5 years
+
+Interest Rate: 6.60% to 7.10% per annum
+
+Notes: Based on ICICI FD rate table
+
+3. iWish Goal-Based Savings
+
+Tenure: 6 months
+
+Interest Rate: 4.50% per annum
+
+Notes: As per ICICI iWish interest rates (July 2025)
+
+4. iWish Goal-Based Savings
+
+Tenure: 12 months only
+
+Interest Rate: 6.25% per annum
+
+Notes: Standard annual iWish goal plan interest
+
+5. ICICI Home Loan
+
+Tenure: Up to 30 years
+
+Interest Rate: 7.70% per annum
+
+Notes: Floating and fixed home loan offerings
+
+6. ICICI Personal Loan
+
+Tenure: 12 to 72 months
+
+Interest Rate: 10.85% to 16.65% per annum
+
+Notes: Personal loan rate varies based on credit profile
+
+7. Loan Against Securities (ICICI LAS)
+
+Tenure: Not specified (depends on security)
+
+Interest Rate: 10.75% to 11.75% per annum
+
+Notes: Interest charged only on amount utilized
+
+8. ICICI Insta Overdraft (OD)
+
+Tenure: 12 months (renewable annually)
+
+Interest Rate: 16% per annum
+
+Notes: Instant overdraft facility
+
+9. Senior Citizens’ Savings Scheme (SCSS)
+
+Tenure: 5 years (Government-backed scheme)
+
+Interest Rate: 8.2% per annum
+
+Notes: Government-regulated rate accessible via ICICI
+
+10. ICICI Tax Saver FD
+
+Tenure: 5-year lock-in
+
+Interest Rate: 5.5% to 7.75% per annum
+
+Notes: Tax deduction under Section 80C

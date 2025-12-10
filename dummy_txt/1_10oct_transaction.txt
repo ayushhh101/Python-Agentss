@@ -1,0 +1,497 @@
+db.transactions.insertMany([
+  // ==========================================
+  // DAY 1: OCT 1 (Wednesday) - Start of Month
+  // Focus: Rent payment, Fuel, Daily Earnings
+  // ==========================================
+  {
+    txId: "tx_20251001_01",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1001_01",
+    type: "expense",
+    amountPaise: 1200000, // ₹12,000 Rent
+    category: "rent",
+    merchant: "Landlord (Vijay Singh)",
+    method: "upi",
+    timestamp: ISODate("2025-10-01T09:30:00.000Z"),
+    source: "manual",
+    notes: "Monthly room rent",
+    synced: true
+  },
+  {
+    txId: "tx_20251001_02",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1001_02",
+    type: "expense",
+    amountPaise: 35000, // ₹350 Petrol
+    category: "fuel",
+    merchant: "Indian Oil - Mulund West",
+    method: "upi",
+    timestamp: ISODate("2025-10-01T11:15:00.000Z"),
+    source: "sms",
+    parserMeta: { parser: "regex", confidence: 0.95, rawParse: { merchant: "Indian Oil", amount: 350 } }
+  },
+  {
+    txId: "tx_20251001_03",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1001_03",
+    type: "expense",
+    amountPaise: 4000, // ₹40
+    category: "food",
+    merchant: "Ganesh Vada Pav",
+    method: "cash",
+    timestamp: ISODate("2025-10-01T14:20:00.000Z"),
+    source: "quicktap", // Quick entry from widget
+    notes: "Lunch on duty"
+  },
+  {
+    txId: "tx_20251001_04",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1001_04",
+    type: "income",
+    amountPaise: 145000, // ₹1,450 Earnings
+    category: "gig_payout",
+    merchant: "Swiggy Payout",
+    method: "bank",
+    timestamp: ISODate("2025-10-01T23:45:00.000Z"),
+    source: "sms",
+    parserMeta: { parser: "regex", confidence: 0.99, rawParse: { sender: "SWIGGY", amount: 1450 } }
+  },
+
+  // ==========================================
+  // DAY 2: OCT 2 (Thursday) - Gandhi Jayanti
+  // Focus: High demand day, extra tea breaks
+  // ==========================================
+  {
+    txId: "tx_20251002_01",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1002_01",
+    type: "expense",
+    amountPaise: 2000, // ₹20
+    category: "food",
+    merchant: "Chai Tapri",
+    method: "upi",
+    timestamp: ISODate("2025-10-02T10:00:00.000Z"),
+    source: "sms"
+  },
+  {
+    txId: "tx_20251002_02",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1002_02",
+    type: "expense",
+    amountPaise: 11000, // ₹110
+    category: "maintenance",
+    merchant: "Bike Mechanic",
+    method: "cash",
+    timestamp: ISODate("2025-10-02T16:30:00.000Z"),
+    source: "manual",
+    notes: "Oil top-up and chain lube"
+  },
+  {
+    txId: "tx_20251002_03",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1002_03",
+    type: "income",
+    amountPaise: 5000, // ₹50 Tip
+    category: "gig_payout",
+    merchant: "Customer Tip",
+    method: "cash",
+    timestamp: ISODate("2025-10-02T20:15:00.000Z"),
+    source: "manual",
+    notes: "Cash tip from large order"
+  },
+  {
+    txId: "tx_20251002_04",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1002_04",
+    type: "income",
+    amountPaise: 182000, // ₹1,820 (Holiday Surge Earnings)
+    category: "gig_payout",
+    merchant: "Zomato Payout",
+    method: "bank",
+    timestamp: ISODate("2025-10-02T23:59:00.000Z"),
+    source: "sms"
+  },
+
+  // ==========================================
+  // DAY 3: OCT 3 (Friday)
+  // Focus: Mobile recharge, Fuel
+  // ==========================================
+  {
+    txId: "tx_20251003_01",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1003_01",
+    type: "expense",
+    amountPaise: 29900, // ₹299
+    category: "bills",
+    merchant: "Jio Prepaid",
+    method: "upi",
+    timestamp: ISODate("2025-10-03T08:00:00.000Z"),
+    source: "sms",
+    notes: "Data pack for delivery app"
+  },
+  {
+    txId: "tx_20251003_02",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1003_02",
+    type: "expense",
+    amountPaise: 30000, // ₹300
+    category: "fuel",
+    merchant: "HP Petrol Pump",
+    method: "upi",
+    timestamp: ISODate("2025-10-03T12:30:00.000Z"),
+    source: "sms"
+  },
+  {
+    txId: "tx_20251003_03",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1003_03",
+    type: "expense",
+    amountPaise: 8000, // ₹80
+    category: "food",
+    merchant: "Anna Dosa Corner",
+    method: "upi",
+    timestamp: ISODate("2025-10-03T14:45:00.000Z"),
+    source: "manual"
+  },
+  {
+    txId: "tx_20251003_04",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1003_04",
+    type: "income",
+    amountPaise: 155000, // ₹1,550
+    category: "gig_payout",
+    merchant: "Swiggy Payout",
+    method: "bank",
+    timestamp: ISODate("2025-10-03T23:30:00.000Z"),
+    source: "sms"
+  },
+
+  // ==========================================
+  // DAY 4: OCT 4 (Saturday) - Weekend Rush
+  // Focus: High earning, late night snack
+  // ==========================================
+  {
+    txId: "tx_20251004_01",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1004_01",
+    type: "expense",
+    amountPaise: 20000, // ₹200 (Top up before heavy shift)
+    category: "fuel",
+    merchant: "Shell Station",
+    method: "upi",
+    timestamp: ISODate("2025-10-04T10:30:00.000Z"),
+    source: "sms"
+  },
+  {
+    txId: "tx_20251004_02",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1004_02",
+    type: "expense",
+    amountPaise: 1500, // ₹15
+    category: "food",
+    merchant: "Water Bottle",
+    method: "cash",
+    timestamp: ISODate("2025-10-04T15:00:00.000Z"),
+    source: "manual"
+  },
+  {
+    txId: "tx_20251004_03",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1004_03",
+    type: "expense",
+    amountPaise: 6000, // ₹60
+    category: "food",
+    merchant: "Egg Bhurji Stall",
+    method: "upi",
+    timestamp: ISODate("2025-10-04T22:30:00.000Z"),
+    source: "manual",
+    notes: "Late night dinner"
+  },
+  {
+    txId: "tx_20251004_04",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1004_04",
+    type: "income",
+    amountPaise: 210000, // ₹2,100 (Saturday High Demand)
+    category: "gig_payout",
+    merchant: "Zomato Payout",
+    method: "bank",
+    timestamp: ISODate("2025-10-04T23:55:00.000Z"),
+    source: "sms"
+  },
+
+  // ==========================================
+  // DAY 5: OCT 5 (Sunday) - OFF DAY
+  // Focus: No income, Groceries, Personal Spending
+  // ==========================================
+  {
+    txId: "tx_20251005_01",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1005_01",
+    type: "expense",
+    amountPaise: 85000, // ₹850
+    category: "groceries",
+    merchant: "D-Mart Thane",
+    method: "upi",
+    timestamp: ISODate("2025-10-05T11:00:00.000Z"),
+    source: "sms",
+    notes: "Weekly ration"
+  },
+  {
+    txId: "tx_20251005_02",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1005_02",
+    type: "expense",
+    amountPaise: 25000, // ₹250
+    category: "entertainment",
+    merchant: "Movie Ticket",
+    method: "upi",
+    timestamp: ISODate("2025-10-05T16:00:00.000Z"),
+    source: "sms"
+  },
+  {
+    txId: "tx_20251005_03",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1005_03",
+    type: "transfer",
+    amountPaise: 50000, // ₹500
+    category: "savings",
+    merchant: "Self Transfer",
+    method: "bank",
+    timestamp: ISODate("2025-10-05T20:00:00.000Z"),
+    source: "manual",
+    notes: "Moved to emergency fund"
+  },
+
+  // ==========================================
+  // DAY 6: OCT 6 (Monday) - Back to Grind
+  // Focus: Fuel, lower weekday income
+  // ==========================================
+  {
+    txId: "tx_20251006_01",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1006_01",
+    type: "expense",
+    amountPaise: 35000, // ₹350
+    category: "fuel",
+    merchant: "Indian Oil",
+    method: "upi",
+    timestamp: ISODate("2025-10-06T09:00:00.000Z"),
+    source: "sms"
+  },
+  {
+    txId: "tx_20251006_02",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1006_02",
+    type: "expense",
+    amountPaise: 4500, // ₹45
+    category: "food",
+    merchant: "Thali House",
+    method: "cash",
+    timestamp: ISODate("2025-10-06T13:30:00.000Z"),
+    source: "manual"
+  },
+  {
+    txId: "tx_20251006_03",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1006_03",
+    type: "income",
+    amountPaise: 130000, // ₹1,300 (Monday Slump)
+    category: "gig_payout",
+    merchant: "Swiggy Payout",
+    method: "bank",
+    timestamp: ISODate("2025-10-06T23:15:00.000Z"),
+    source: "sms"
+  },
+
+  // ==========================================
+  // DAY 7: OCT 7 (Tuesday)
+  // Focus: Bike trouble, small expenses
+  // ==========================================
+  {
+    txId: "tx_20251007_01",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1007_01",
+    type: "expense",
+    amountPaise: 5000, // ₹50
+    category: "maintenance",
+    merchant: "Puncture Shop",
+    method: "cash",
+    timestamp: ISODate("2025-10-07T11:20:00.000Z"),
+    source: "manual",
+    notes: "Rear tyre puncture"
+  },
+  {
+    txId: "tx_20251007_02",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1007_02",
+    type: "expense",
+    amountPaise: 2000, // ₹20
+    category: "food",
+    merchant: "Cutting Chai",
+    method: "upi",
+    timestamp: ISODate("2025-10-07T16:00:00.000Z"),
+    source: "quicktap"
+  },
+  {
+    txId: "tx_20251007_03",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1007_03",
+    type: "expense",
+    amountPaise: 10000, // ₹100
+    category: "fuel",
+    merchant: "Petrol - Emergency",
+    method: "cash",
+    timestamp: ISODate("2025-10-07T19:00:00.000Z"),
+    source: "manual"
+  },
+  {
+    txId: "tx_20251007_04",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1007_04",
+    type: "income",
+    amountPaise: 140000, // ₹1,400
+    category: "gig_payout",
+    merchant: "Zomato Payout",
+    method: "bank",
+    timestamp: ISODate("2025-10-07T23:45:00.000Z"),
+    source: "sms"
+  },
+
+  // ==========================================
+  // DAY 8: OCT 8 (Wednesday)
+  // Focus: Routine day
+  // ==========================================
+  {
+    txId: "tx_20251008_01",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1008_01",
+    type: "expense",
+    amountPaise: 30000, // ₹300
+    category: "fuel",
+    merchant: "HP Petrol Pump",
+    method: "upi",
+    timestamp: ISODate("2025-10-08T10:00:00.000Z"),
+    source: "sms"
+  },
+  {
+    txId: "tx_20251008_02",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1008_02",
+    type: "expense",
+    amountPaise: 7000, // ₹70
+    category: "food",
+    merchant: "Frankie Stall",
+    method: "upi",
+    timestamp: ISODate("2025-10-08T14:30:00.000Z"),
+    source: "quicktap"
+  },
+  {
+    txId: "tx_20251008_03",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1008_03",
+    type: "income",
+    amountPaise: 150000, // ₹1,500
+    category: "gig_payout",
+    merchant: "Swiggy Payout",
+    method: "bank",
+    timestamp: ISODate("2025-10-08T23:50:00.000Z"),
+    source: "sms"
+  },
+
+  // ==========================================
+  // DAY 9: OCT 9 (Thursday)
+  // Focus: Electric Bill payment
+  // ==========================================
+  {
+    txId: "tx_20251009_01",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1009_01",
+    type: "expense",
+    amountPaise: 300000, // ₹3,000 (Accumulated Electricity?) or partial. User profile says 300000 for Elec/Water.
+    category: "bills",
+    merchant: "MSEDCL Bill",
+    method: "upi",
+    timestamp: ISODate("2025-10-09T09:15:00.000Z"),
+    source: "sms",
+    notes: "Electricity bill for home"
+  },
+  {
+    txId: "tx_20251009_02",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1009_02",
+    type: "expense",
+    amountPaise: 25000, // ₹250
+    category: "fuel",
+    merchant: "Indian Oil",
+    method: "upi",
+    timestamp: ISODate("2025-10-09T13:00:00.000Z"),
+    source: "sms"
+  },
+  {
+    txId: "tx_20251009_03",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1009_03",
+    type: "income",
+    amountPaise: 160000, // ₹1,600
+    category: "gig_payout",
+    merchant: "Zomato Payout",
+    method: "bank",
+    timestamp: ISODate("2025-10-09T23:30:00.000Z"),
+    source: "sms"
+  },
+
+  // ==========================================
+  // DAY 10: OCT 10 (Friday)
+  // Focus: Friday night rush preparation
+  // ==========================================
+  {
+    txId: "tx_20251010_01",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1010_01",
+    type: "expense",
+    amountPaise: 32000, // ₹320
+    category: "fuel",
+    merchant: "Shell Station",
+    method: "upi",
+    timestamp: ISODate("2025-10-10T11:00:00.000Z"),
+    source: "sms"
+  },
+  {
+    txId: "tx_20251010_02",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1010_02",
+    type: "expense",
+    amountPaise: 5000, // ₹50
+    category: "food",
+    merchant: "Misal Pav",
+    method: "cash",
+    timestamp: ISODate("2025-10-10T14:15:00.000Z"),
+    source: "manual"
+  },
+  {
+    txId: "tx_20251010_03",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1010_03",
+    type: "expense",
+    amountPaise: 10000, // ₹100
+    category: "other",
+    merchant: "Pharmacy",
+    method: "upi",
+    timestamp: ISODate("2025-10-10T18:00:00.000Z"),
+    source: "sms",
+    notes: "Painkillers for back pain"
+  },
+  {
+    txId: "tx_20251010_04",
+    userId: "usr_rahul_001",
+    clientLocalId: "cli_1010_04",
+    type: "income",
+    amountPaise: 175000, // ₹1,750 (Friday Earnings)
+    category: "gig_payout",
+    merchant: "Swiggy Payout",
+    method: "bank",
+    timestamp: ISODate("2025-10-10T23:59:00.000Z"),
+    source: "sms"
+  }
+]);

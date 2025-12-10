@@ -1,0 +1,84 @@
+const UserAnalyticsSchema = new mongoose.Schema({
+  userId: { type: String, unique: true, index: true },
+
+  // ---- 1) High-level metrics summary (for LLM analysis) ----
+  metrics_summary: {
+    income: {
+      avgMonthlyIncome: Number,
+      minMonthlyIncome: Number,
+      maxMonthlyIncome: Number,
+      incomeStability: String,   // stable, variable, unknown
+      sources: [String],
+      estimatedHourlyRate: Number
+    },
+
+    expenses: {
+      avgMonthlyExpenses: Number,
+      avgFixedExpenses: Number,
+      avgVariableExpenses: Number,
+      topCategories: [
+        { category: String, amountPaise: Number }
+      ],
+      expenseVolatilityScore: Number
+    },
+
+    savings: {
+      avgMonthlySavings: Number,
+      bestMonthSavings: Number,
+      worstMonthSavings: Number,
+      savingsRatePercent: Number
+    },
+
+    cashflow: {
+      incomeExpenseRatio: Number,
+      cashflowStability: String,      // stable, variable
+      monthsWithNegativeCashflow: Number
+    },
+
+    patterns: {
+      peakExpenseCategories: [String],
+      lowExpenseMonths: [String],
+      highIncomeMonths: [String],
+      seasonalPatterns: String
+    },
+
+    metadata: {
+      monthsAnalyzed: Number,
+      hasIncompleteData: Boolean
+    }
+  },
+
+  // ---- 2) Monthly Time Series (clean format for charts, LLM, UI) ----
+  monthly_timeseries: [
+    {
+      month: String,                  // "2025-01"
+      income: Number,
+      expenses: Number,
+      savings: Number,
+      transactionCount: Number,
+
+      categories: Object              // { fuel: 30000, food: 12000 ... }
+    }
+  ],
+
+  // ---- 3) Raw monthly aggregates (from the pipeline directly) ----
+  raw_monthly_aggregates: [
+    {
+      month: String,
+      totalIncome: Number,
+      totalExpenses: Number,
+      transactionCount: Number,
+      categories: [
+        {
+          category: String,
+          amountPaise: Number,
+          type: String
+        }
+      ]
+    }
+  ],
+
+  // ---- 4) Metadata ----
+  lastAnalyticsUpdatedAt: Date,
+  createdAt: { type: Date, default: Date.now }
+});

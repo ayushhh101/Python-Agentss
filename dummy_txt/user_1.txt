@@ -1,0 +1,121 @@
+db.users.insertOne({
+
+  userId: "usr_rahul_001",
+
+  name: "Rahul Sharma",
+
+  age: 27,
+
+  city: "Mumbai",
+
+  phone: "9876543210",
+
+  preferred_language: "hindi",
+
+  onboarding_completed_at: ISODate("2024-12-01T10:00:00.000Z"),
+
+  permissions: {
+
+    sms_access: true,
+
+    notifications: true,
+
+    location: true
+
+  },
+
+  work_profile: {
+
+    primary_work_type: "gig",
+
+    platforms: ["swiggy", "zomato"],
+
+    work_days: ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"],
+
+    off_days: ["sunday"],
+
+    total_weekly_hours: 54,
+
+    avg_daily_hours_weekday: 8,
+
+    avg_daily_hours_weekend: 5
+
+  },
+
+  financial_profile: {
+
+    monthly_income: {
+
+      estimatedAmountPaise: 4800000,
+
+      stability: "variable",
+
+      sources: ["swiggy", "zomato", "cash_tips"]
+
+    },
+
+    fixed_monthly_expenses: {
+
+      rentPaise: 1200000,
+
+      electricity_waterPaise: 300000,
+
+      phone_internetPaise: 200000,
+
+      totalPaise: 1700000
+
+    },
+
+    variable_monthly_expenses: {
+
+      food_groceriesPaise: 600000,
+
+      fuel_maintenancePaise: 500000,
+
+      entertainment_otherPaise: 300000,
+
+      totalPaise: 1400000
+
+    },
+
+    total_monthly_expensesPaise: 3100000,
+
+    potential_monthly_savingsPaise: 1700000,
+
+    analytics: {
+
+      work_days_per_week: 6,
+
+      total_weekly_hours: 54,
+
+      estimated_hourly_ratePaise: 222000,
+
+      income_expense_ratio: 1.55,
+
+      savings_rate_percent: 35.4
+
+    }
+
+  },
+
+  ai_context: {
+
+    context_service: "",
+
+    saving_context: "",
+
+    goal_context: "",
+
+    current_stat_context: "",
+
+    daily_spend_context_goal: "",
+
+    monthly_spend_context_goal: ""
+
+  },
+
+  createdAt: ISODate("2024-12-01T10:00:00.000Z"),
+
+  updatedAt: ISODate("2024-12-01T10:10:00.000Z")
+
+})
