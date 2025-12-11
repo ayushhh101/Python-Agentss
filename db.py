@@ -18,6 +18,7 @@ async def save_tx(transaction):
 
     # Parse JSON
     transaction = json.loads(clean)
+    print(transaction)
 
     # Insert into DB
     result = await transactions.insert_one(transaction)

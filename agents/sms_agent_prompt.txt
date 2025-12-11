@@ -4,7 +4,7 @@ and extract transaction details that fit this MongoDB schema:
 
 {
   "txId": "tx_xxx",                 
-  "userId": "101",                  
+  "userId": {{userId}},                  
   "eventId": null,                  
   "clientLocalId": "client_1",      
   "type": "income" | "expense" | "transfer",

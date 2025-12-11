@@ -29,7 +29,7 @@ class FinWellAgent:
     # ---------------------------------------------------------------
     # PIPELINE EXECUTION
     # ---------------------------------------------------------------
-    def run_pipeline(self):
+    async def run_pipeline(self):
         try:
             agent_list = deciding_agent(self.query)
             print(f"\n{'='*60}")
@@ -46,16 +46,15 @@ class FinWellAgent:
                     # ------------------ AGENT : DATA ANALYSIS ------------------
                     if agent_name == "create_data_analysis_agent":
                         print("\n--- Step 1: Data Analysis ---")
+
+                        # create async analysis agent
+                        analysis_agent = await create_data_analysis_agent(self.userId)
+
+                        # get analysis response
                         
-                        # 1) Get the analysis agent (we need USER ID here)
-                        analysis_agent = create_data_analysis_agent(self.userId)
 
-                        # 2) Ask the agent to summarize the analytics
-                        analysis_response = analysis_agent("Summarize my financial analytics.")
-
-                        # 3) Store response
-                        self.context["data_analysis"] = analysis_response
-                        self.results["data_analysis"] = analysis_response
+                        self.context["data_analysis"] = analysis_agent
+                        self.results["data_analysis"] = analysis_agent
 
                         print("✓ Data Analysis Complete")
 
@@ -149,14 +148,14 @@ class FinWellAgent:
 # ---------------------------------------------------------------
 # EXTERNAL API FUNCTION
 # ---------------------------------------------------------------
-def run_agent_pipeline(userId,query: str,lang):
+async def run_agent_pipeline(userId,query: str,lang):
     """
     Loads CSV and runs the FinWellAgent pipeline.
     """
     
 
     pipeline = FinWellAgent(userId,query,lang)
-    return pipeline.run_pipeline()
+    return await pipeline.run_pipeline()
 # ---------------------------------------------------------------
 # LOCAL TESTING (run: python main_agent.py)
 # ---------------------------------------------------------------
