@@ -31,13 +31,13 @@ Return ONLY a valid JSON object with fields:
 - userId
 - month(10 for oct , 11 for november and likewise)
 - monthly_summ_head
-- monthly_summ_content
+- monthly_summ_content (not array , text)
 - earning_head
 - earning_content (2-3 lines , point wise)
 - spike_header
-- spike_content
-- smart_header    ((2-3 lines , point wise))
-- smart_content
+- spike_content  (2-3 lines , point wise))
+- smart_header    
+- smart_content  (no array , onnly text)
 
 all content are in paise , convert them in rs by /100
 """
@@ -86,4 +86,4 @@ all content are in paise , convert them in rs by /100
     return story_json
 
 if __name__ == "__main__":
-    asyncio.run(ai_story("usr_rahul_001", 10))
+    asyncio.run(ai_story("usr_rahul_001", 11))
